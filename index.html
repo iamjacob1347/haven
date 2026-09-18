@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#170d3b" />
+  <title>Haven — Faith, Help & Community</title>
+  <meta name="description" content="Explore the Haven app design: FaithBridge, encouragement, prayer, and community." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M11 34Q32 8 53 34' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M18 33v19M46 33v19M18 42h28' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root{--ink:#17102d;--violet:#6f46d9;--deep:#24105c;--blue:#4ba6e8;--lilac:#c9a7ff;--paper:#f7f3ff;--gold:#ffd77a}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:var(--ink);background:radial-gradient(circle at 18% 18%,#dbc8ff 0,transparent 30%),radial-gradient(circle at 82% 74%,#bfe5ff 0,transparent 34%),#eee9fa;overflow:hidden}
+    .page{width:min(1100px,94vw);display:grid;grid-template-columns:1fr 420px;align-items:center;gap:clamp(24px,6vw,80px)}
+    .copy small{display:inline-block;padding:7px 11px;border:1px solid rgba(36,16,92,.16);border-radius:999px;background:#ffffff87;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.copy h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,88px);line-height:.95;margin:20px 0 18px;color:var(--deep)}.copy p{max-width:520px;font-size:18px;line-height:1.65;color:#51476c}.replay{border:0;border-radius:999px;padding:13px 20px;background:var(--deep);color:white;font-weight:700;cursor:pointer;box-shadow:0 14px 30px #24105c35}.hint{display:block;margin-top:13px;font-size:12px;color:#756c88}
+    .phone{position:relative;width:390px;height:780px;border:10px solid #17131d;border-radius:54px;background:#fbfaff;box-shadow:0 35px 90px #28145c45;overflow:hidden}.island{position:absolute;z-index:20;left:50%;top:11px;transform:translateX(-50%);width:108px;height:28px;border-radius:18px;background:#151219}.status{position:absolute;z-index:15;top:18px;left:26px;right:26px;display:flex;justify-content:space-between;color:white;font-size:12px;font-weight:700}.screen{position:absolute;inset:0;background:radial-gradient(circle at 76% 18%,#7a50dc 0,transparent 35%),radial-gradient(circle at 20% 82%,#327fc9 0,transparent 40%),linear-gradient(145deg,#162d73,#36136f 52%,#7f4dda);overflow:hidden}.screen::before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 180deg,transparent,#a777ff55,transparent,#3bb5ff44,transparent);animation:drift 8s linear infinite}.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 0.8px,transparent 1px);background-size:32px 32px;opacity:.26}
+    .stage{position:absolute;inset:0;display:grid;place-items:center}.dove{position:absolute;z-index:4;left:-64%;top:39%;width:72%;aspect-ratio:1.18;animation:fly 6s cubic-bezier(.32,.02,.18,1) forwards;will-change:transform,left,filter,opacity}.dove img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 24px #13042f66);animation:wingPulse .8s ease-in-out 4 alternate}.wordmark{position:absolute;z-index:3;top:44%;left:50%;transform:translate(-50%,-50%);width:330px;height:190px;opacity:0;filter:blur(16px);animation:reveal 6s cubic-bezier(.2,.72,.25,1) forwards}.roof{stroke-dasharray:350;stroke-dashoffset:350;animation:drawRoof 6s ease forwards}.letters{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:69px;letter-spacing:1px;fill:url(#wordGradient);stroke:#eadcff;stroke-width:.7px;paint-order:stroke fill;filter:drop-shadow(0 8px 12px #17033c99)}.tagline{position:absolute;top:61%;left:50%;transform:translateX(-50%);width:100%;text-align:center;color:#ece4ff;opacity:0;animation:tag 6s ease forwards}.tagline b{display:block;font-family:Georgia,serif;font-size:17px;letter-spacing:.03em}.tagline span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}.glow{position:absolute;z-index:5;left:50%;top:34%;width:13px;height:13px;transform:translate(-50%,-50%);background:var(--gold);clip-path:polygon(50% 0,61% 37%,100% 50%,61% 63%,50% 100%,39% 63%,0 50%,39% 37%);opacity:0;filter:drop-shadow(0 0 14px #ffe9a6);animation:star 6s ease forwards}.enter{position:absolute;bottom:68px;left:50%;transform:translateX(-50%);width:72%;height:49px;border:1px solid #ffffff55;border-radius:999px;background:#ffffff18;color:white;font-weight:700;backdrop-filter:blur(10px);opacity:0;animation:tag 6s .5s ease forwards;cursor:pointer}.leaf{fill:none;stroke:#bde9d0;stroke-width:3;stroke-linecap:round}.reduce{display:none}
+    @keyframes fly{0%{left:-64%;transform:translateY(44px) scale(.72) rotate(-3deg);opacity:0}9%{opacity:1}42%{left:14%;transform:translateY(-14px) scale(.9) rotate(1deg);opacity:1;filter:blur(0)}56%{left:14%;transform:translateY(-14px) scale(.9);opacity:1;filter:blur(0)}69%{left:14%;transform:translateY(-14px) scale(.72);opacity:0;filter:blur(14px) brightness(1.8)}100%{left:14%;transform:translateY(-14px) scale(.68);opacity:0;filter:blur(18px)}}
+    @keyframes wingPulse{0%{transform:translateY(2px) rotate(-.6deg)}100%{transform:translateY(-5px) rotate(.6deg)}}
+    @keyframes reveal{0%,57%{opacity:0;transform:translate(-50%,-50%) scale(.72);filter:blur(16px)}72%,100%{opacity:1;transform:translate(-50%,-50%) scale(1);filter:blur(0)}}
+    @keyframes drawRoof{0%,68%{stroke-dashoffset:350}91%,100%{stroke-dashoffset:0}}
+    @keyframes star{0%,77%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(0)}88%,100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(90deg)}}
+    @keyframes tag{0%,82%{opacity:0;transform:translate(-50%,9px)}100%{opacity:1;transform:translate(-50%,0)}}
+    @keyframes drift{to{transform:rotate(360deg)}}
+    @media(max-width:850px){body{overflow:auto;padding:28px 0}.page{grid-template-columns:1fr;justify-items:center}.copy{text-align:center}.copy p{font-size:16px}.phone{width:min(390px,92vw);height:min(780px,78vh);min-height:650px}.copy h1{font-size:54px}}
+    @media(prefers-reduced-motion:reduce){.dove,.wordmark,.roof,.glow,.tagline,.enter,.screen::before{animation-duration:.001s!important;animation-delay:0s!important}}
+    .motion{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+    .wordmark{top:50%;animation:none;opacity:1;filter:none}.roof{animation:roofFinish 7s ease forwards}
+    .glow{top:calc(50% - 108px);background:linear-gradient(135deg,#fff,#e4cbff);filter:drop-shadow(0 0 12px #caa4ff);animation:starFinish 7s ease forwards}
+    .tagline{animation:tag 7s ease forwards}.enter{animation:tag 7s .4s ease forwards}
+    .screen:not(.ready) *,.screen:not(.ready)::before{animation-play-state:paused!important}
+    @keyframes roofFinish{0%,54%{stroke-dashoffset:350;opacity:0}55%{opacity:1;stroke-dashoffset:350}68%,86%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes starFinish{0%,85%{opacity:0;transform:translate(-50%,-50%) scale(.2)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+    @media(prefers-reduced-motion:reduce){.roof,.glow{animation-duration:.001s!important}}
+    .screen{background:radial-gradient(ellipse at 12% 8%,#448ed244,transparent 38%),linear-gradient(160deg,#2862a9 0%,#334b95 23%,#2b124e 48%,#50277c 68%,#ac80d9 100%)}
+    .screen::before{inset:-5%;background:url('assets/purple-supernova.png') center/cover no-repeat;opacity:.1;filter:blur(9px) saturate(.6);animation:nebulaDrift 28s ease-in-out infinite alternate}
+    .stars{display:none}
+    .roof{animation-duration:5.2s}.glow{animation-duration:3.9s}.tagline,.enter{animation-duration:3.9s}.enter{animation-delay:.2s;background:#26104555}
+    @keyframes nebulaDrift{from{transform:scale(1)}to{transform:scale(1.055) translateY(-.6%)}}
+    @media(prefers-reduced-motion:reduce){.screen::before{animation:none!important}}
+    .wordmark{top:43%}.glow{top:calc(43% - 108px)}.tagline{top:54%}
+    .screen{transition:opacity .55s ease,transform .7s ease}.home-open .screen{opacity:0;transform:scale(1.035);pointer-events:none}
+    .home{position:absolute;inset:0;z-index:10;overflow-y:auto;background:#f8f5ff;color:#2c1849;animation:homeReveal .65s ease both;scrollbar-width:thin;scrollbar-color:#cbb9e7 transparent}
+    .home[hidden]{display:none}.home-header{padding:28px 24px 22px;background:linear-gradient(135deg,#284d91,#341658 60%,#7950a8);color:white;display:flex;flex-direction:column;gap:8px}
+    .home-brand{font:bold 30px Georgia,serif;display:flex;align-items:center;justify-content:space-between}.home-brand span{font-size:22px;color:#ddc9ff}.home-label{font-size:12px;letter-spacing:.14em;color:#e0d2f4}
+    .home-content{padding:25px 22px 20px}.eyebrow{font-size:12px;letter-spacing:.12em;font-weight:700;margin:0 0 9px;color:#77559a}.home h2{font:32px/1.15 Georgia,serif;letter-spacing:-.03em;margin:0 0 10px;outline:none}.welcome{font-size:16px;line-height:1.5;margin:0 0 22px;color:#776585}
+    .bridge-card{padding:23px;border-radius:23px;color:white;background:radial-gradient(ellipse at top right,#9160c777,transparent 65%),linear-gradient(125deg,#322051,#55317e);box-shadow:0 10px 24px #3c19551a}.bridge-card .eyebrow{color:#d9c1f5;font-size:12px}.bridge-card h3{font:30px Georgia,serif;margin:8px 0}.bridge-card p{font-size:16px;line-height:1.5;color:#e6dcf2;margin:9px 0 18px}.bridge-card summary{display:flex;justify-content:space-between;font-size:14px;font-weight:700;padding-top:15px;border-top:1px solid #ffffff33;cursor:pointer}.bridge-card details p{margin-bottom:0;font-size:14px}
+    .section-heading{display:flex;justify-content:space-between;align-items:center;margin-top:25px}.section-heading h3,.community-title{font-size:17px;margin:0 0 13px}.section-heading span{color:#8760b2;margin-bottom:13px}.verse-card{padding:20px;background:#efe7fa;border:1px solid #e5d8f4;border-radius:19px}.verse-card blockquote{font:22px/1.4 Georgia,serif;margin:5px 0 12px}.verse-card p{font-size:12px;color:#785a94;margin:0}.community-title{margin-top:25px}.home-row{border-bottom:1px solid #e8dff0;padding:13px 0}.home-row summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none}.home-row summary::-webkit-details-marker,.bridge-card summary::-webkit-details-marker{display:none}.row-icon{display:grid;place-items:center;background:#eae0f6;border-radius:13px;min-width:40px;height:44px;font-size:24px;color:#7345a7}.home-row summary>span:nth-child(2){flex:1}.home-row b{display:block;font-size:14px;font-weight:650}.home-row small{display:block;font-size:12px;line-height:1.5;color:#826f92;margin-top:4px}.home-row p{font-size:16px;line-height:1.6;color:#665175;padding:0 5px}.home-footer{text-align:center;font-size:12px;color:#8a769a;margin:26px 0 0}summary:focus-visible,button:focus-visible{outline:3px solid #af8cda;outline-offset:4px}
+    @keyframes homeReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.home{animation:none}.screen{transition:none}}
+  </style>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="social.css" />
+  <link rel="stylesheet" href="signup.css" />
+  <link rel="stylesheet" href="website.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="copy">
+      <small>Haven · Interactive design</small>
+      <h1>Help. Hope.<br>A place to belong.</h1>
+      <p>Stories that bring us closer. A community that listens. A bridge to help when you need it.</p>
+      <button class="replay" type="button" onclick="replay()">Replay opening</button>
+      <span class="hint">Design preview · Sample content, no live matching or messaging</span>
+    </section>
+    <section class="phone" aria-label="Haven">
+      <div class="screen" id="screen">
+        <div class="stars"></div><div class="status"><span>9:41</span><span>● ● ●</span></div><div class="island"></div>
+        <div class="stage">
+          <canvas class="motion" aria-label="The purple Haven dove appears at the center in a soft glow, then transforms into Haven"></canvas>
+          <div class="glow"></div>
+          <svg class="wordmark" viewBox="0 0 320 190" aria-label="Haven"><defs><linearGradient id="wordGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4dcff"/><stop offset=".32" stop-color="#b678ff"/><stop offset=".68" stop-color="#702ee8"/><stop offset="1" stop-color="#391179"/></linearGradient></defs>
+            <path class="roof" d="M46 53 Q160 -4 274 53" fill="none" stroke="#d8c5ff" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+          <div class="tagline"><b>A safe bridge to hope.</b><span>Faith · Help · Community</span></div>
+          <button class="enter" type="button" onclick="openSignup()">Get started</button>
+        </div>
+      </div>
+      <section class="signup" id="signup" aria-labelledby="signup-title" hidden>
+        <div class="signup-welcome"><div class="signup-brand"><img src="assets/haven-dove.png" alt=""/><span>Haven</span></div><div class="signup-story"><p>FAITH · HELP · COMMUNITY</p><h1>A place<br>to belong.</h1><p>Stories that bring us closer.<br>A community that listens.<br>A bridge to help when you need it.</p></div></div>
+        <div class="signup-card">
+          <p class="signup-eyebrow">A PLACE TO BELONG</p>
+          <h2 id="signup-title" tabindex="-1">Create your<br>Haven account.</h2>
+          <p class="signup-intro">Find hope. Share your story.<br>Walk with a community of faith.</p>
+          <p class="signup-demo" id="signup-demo">Sign-up preview · Use sample details. Nothing is sent or saved, and no account is created.</p>
+          <form id="signup-form" aria-describedby="signup-demo">
+            <label for="signup-alias">Your community name</label>
+            <input id="signup-alias" type="text" placeholder="e.g. Quiet Dove" required minlength="2" maxlength="30" autocomplete="off" aria-describedby="alias-hint"/>
+            <p class="input-hint" id="alias-hint">Choose an alias instead of your real name.</p>
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" placeholder="you@example.com" required autocomplete="off"/>
+            <label for="signup-password">Password</label>
+            <div class="password-field"><input id="signup-password" type="password" placeholder="At least 8 characters" required minlength="8" autocomplete="off" aria-describedby="password-hint"/><button id="toggle-password" type="button" aria-label="Show password" aria-pressed="false">Show</button></div>
+            <p class="input-hint" id="password-hint">For this preview, use a made-up password.</p>
+            <button class="signup-submit" type="submit">Continue to Haven <span aria-hidden="true">→</span></button>
+          </form>
+          <button class="signup-explore" type="button" onclick="openHome()">Explore the preview first</button>
+        </div>
+      </section>
+      <section class="home" id="home" aria-label="Haven home" hidden>
+        <header class="home-header"><span class="home-brand">Haven<span aria-hidden="true">✦</span></span><span class="home-label">FAITH · HELP · COMMUNITY</span></header>
+        <div class="home-content">
+          <p class="eyebrow">A PLACE TO BELONG</p>
+          <h2 tabindex="-1" id="home-title">You are not alone.</h2>
+          <p class="welcome">Find encouragement for today.<br>Take your next step with hope.</p>
+          <section class="bridge-card" aria-labelledby="bridge-title">
+            <span class="eyebrow">SUPPORT FOR YOUR JOURNEY</span>
+            <h3 id="bridge-title">FaithBridge</h3>
+            <p>A bridge between Christians facing persecution and the people who can help.</p>
+            <details><summary>Explore support <span aria-hidden="true">↗</span></summary><p>FaithBridge is being developed to help you find organizations and resources based on your needs, language, and location.</p></details>
+          </section>
+          <div class="section-heading"><h3>A moment of hope</h3><span aria-hidden="true">✦</span></div>
+          <section class="verse-card"><span class="eyebrow">BE STILL</span><blockquote>“God is our refuge and strength, a very present help in trouble.”</blockquote><p>Psalm 46:1 · KJV</p></section>
+          <h3 class="community-title">Walk together</h3>
+          <details class="home-row"><summary><span class="row-icon" aria-hidden="true">♡</span><span><b>Pray for the Church</b><small>Stand with believers around the world</small></span><span aria-hidden="true">+</span></summary><p>Lord, strengthen those who face persecution for their faith. Bring comfort to their families, courage for today, and people who can offer care. Amen.</p></details>
+          <details class="home-row"><summary><span class="row-icon" aria-hidden="true">✧</span><span><b>Testimonies of hope</b><small>Faith shared. Courage renewed.</small></span><span aria-hidden="true">+</span></summary><p>Stories from the community will appear here as Haven grows.</p></details>
+          <p class="home-footer">Rooted in faith. Connected in hope.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script src="opening.js"></script>
+  <script src="signup.js"></script>
+</body>
+</html>

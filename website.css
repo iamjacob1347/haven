@@ -1,0 +1,45 @@
+/* The Haven experience adapts from a mobile app to a full website. */
+.copy,.island,.status{display:none}
+body{display:block;padding:0;background:#f8f6fc;overflow:hidden}
+.page{display:block;width:100%;max-width:none}
+.phone{width:100%;height:100dvh;min-height:0;border:0;border-radius:0;box-shadow:none}
+.website-aside,.desktop-tagline,.signup-story{display:none}
+.signup-welcome{min-width:0}
+@media(min-width:900px){
+ .home{display:grid;grid-template-columns:224px minmax(0,1fr) 290px;grid-template-rows:88px minmax(0,1fr);background:#f9f7fc;animation:homeReveal .55s ease both}
+ .home[hidden]{display:none}
+ .app-top{grid-column:1/-1;grid-row:1;padding:0 36px 0 30px;background:#fff;border-bottom:1px solid #e9e1f0;gap:28px}
+ .brand{font-size:34px;gap:10px}.brand img{width:42px;height:46px}
+ .desktop-tagline{display:block;flex:1;font-size:14px;color:#8b789c;letter-spacing:.035em}
+ .header-actions{gap:12px}.header-actions button{width:44px;height:44px}
+ .app-nav{grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:10px;padding:32px 18px;background:#fff;border-top:0;border-right:1px solid #e9e1f0;overflow:auto}
+ .app-nav button{display:flex;flex-direction:row;align-items:center;gap:15px;text-align:left;min-height:52px;padding:14px 17px;font-size:15px;color:#7a688a;border-radius:13px;flex-shrink:0}
+ .app-nav button:hover{background:#f4eefb}.app-nav button[aria-current=page]{background:#eee4f9;color:#60328d;font-weight:650}
+ .app-nav .icon{width:23px;height:23px}
+ .app-nav .dove-tab{order:1;margin-top:24px;padding:9px 14px;background:linear-gradient(110deg,#422364,#7b4ba8);color:#fff;gap:12px}
+ .app-nav .dove-tab:hover,.app-nav .dove-tab[aria-current=page]{background:#573080;color:#fff}
+ .dove-button{background:transparent;box-shadow:none;width:35px;height:35px}.dove-button img{width:34px;height:33px}.dove-button>span{bottom:-2px;right:-2px;border-color:#684090}
+ .app-scroll{grid-column:2;grid-row:2;min-width:0;min-height:0;padding:38px clamp(24px,3vw,48px) 55px;overflow-y:auto}
+ .app-scroll h2{font-size:40px;letter-spacing:-.035em}.app-scroll>.intro{max-width:650px;margin-bottom:28px}
+ .feed-heading h2{font-size:42px}.feed-heading>span{font-size:16px}
+ .bridge-strip{padding:19px 22px;border-radius:18px;margin:27px 0 18px}.bridge-strip small{font-size:14px}.bridge-strip b{font-size:23px}
+ .feed-tabs{gap:30px;margin-bottom:23px}.feed-tabs button{font-size:15px;padding-bottom:14px}
+ .reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}.sample-reel{min-height:365px;padding:20px 17px}.sample-reel h3{font-size:27px}.reel-caption{min-height:162px;padding-left:18px}.reel-badge{font-size:12px}.sample-reel>button,.sample-reel>p,.reel-caption>span{font-size:12px}
+ .website-aside{display:block;grid-column:3;grid-row:2;padding:38px 26px 28px 4px;overflow-y:auto}
+ .website-verse{border-radius:22px;padding:24px;background:linear-gradient(145deg,#42205f,#75529c);color:#fff;box-shadow:0 10px 30px #4a256216}
+ .website-verse .overline{color:#e2c9f8}.website-verse blockquote{margin:20px 0;font:25px/1.45 Georgia,serif}.website-verse>p:last-child{font-size:12px;color:#dbc6ec}
+ .website-connect{margin-top:28px}.website-connect h3{font:25px Georgia,serif;margin:0 0 16px;color:#492d62}
+ .website-connect button{width:100%;display:flex;align-items:center;text-align:left;gap:10px;border:0;border-bottom:1px solid #e7ddec;background:none;padding:18px 0;color:#7a5795}.website-connect button>span{flex:1}.website-connect b{display:block;font-size:14px;line-height:1.4;font-weight:600}.website-connect small{display:block;font-size:12px;color:#94819f;line-height:1.5;margin-top:4px}.website-connect button>.icon:last-child{width:15px;height:15px}
+ .website-footnote{font-size:12px;line-height:1.6;color:#9b89a7;margin-top:24px}
+ .home[data-view=help] .app-scroll{grid-column:2/-1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(290px,.9fr);gap:clamp(28px,4vw,70px);align-items:start}
+ .home[data-view=help] .website-aside{display:none}.organization-resources{margin:0;padding:5px 0 0;border:0}.organization-resources>h3{font-size:30px}.organization-card{padding:22px;background:#fff}.organization-list{gap:16px}.choice-grid{gap:13px;margin:24px 0}.choice{min-height:75px;font-size:15px}.needs-panel{max-width:650px}.needs-panel .action{font-size:16px;margin-top:22px}
+ .social-post{padding:26px 0}.prayer-post{padding:25px;margin:20px 0}.discussion-composer{padding:23px}.byline .alias-avatar{width:43px;height:43px;font-size:14px}.byline b{font-size:15px}.byline small{font-size:12px}.chips button,.post-actions button{font-size:14px}.feed-note{font-size:13px!important}
+ .home[data-view=create] .app-scroll,.home[data-view=profile] .app-scroll,.home[data-view=settings] .app-scroll{width:100%;max-width:800px;justify-self:center}.video-picker{padding:45px 20px}.upload-preview{max-height:420px}
+ .signup{display:grid;grid-template-columns:minmax(0,1fr) 450px;align-items:center;gap:clamp(40px,8vw,140px);padding:48px max(60px,calc((100vw - 1160px)/2));background:radial-gradient(ellipse at 9% 5%,#476cbd77,transparent 47%),radial-gradient(ellipse at 50% 110%,#a673c977,transparent 55%),linear-gradient(130deg,#24163e,#3a1c60 65%,#603986)}
+ .signup[hidden]{display:none}.signup-welcome{align-self:center}.signup-brand{justify-content:flex-start;gap:14px;font-size:42px;margin-bottom:62px}.signup-brand img{width:64px;height:68px}.signup-story{display:block}.signup-story>p:first-child{font-size:12px;letter-spacing:.19em;color:#cdb3e7}.signup-story h1{font:clamp(62px,6.4vw,92px)/1.04 Georgia,serif;letter-spacing:-.04em;margin:20px 0 28px;color:#faf1ff}.signup-story>p:last-child{font-size:18px;line-height:1.85;color:#dccbe9;margin-bottom:0}.signup-card{padding:32px 36px 25px;border-radius:28px;width:100%;margin:0}.signup h2{font-size:40px}.signup-intro{font-size:16px}.signup-demo{font-size:12px}.signup label{margin-top:17px}.signup input{padding-top:13px;padding-bottom:13px}
+ .enter{width:240px;bottom:15%;font-size:16px}.tagline b{font-size:24px}.tagline span{display:block;font-size:12px;margin-top:12px}.wordmark{width:360px}
+}
+@media(min-width:1500px){.home{grid-template-columns:250px minmax(0,1fr) 340px}.app-scroll{padding-left:60px;padding-right:60px}.website-aside{padding-right:40px}.sample-reel{min-height:440px}.sample-reel h3{font-size:34px;max-width:290px}.sample-reel>img{margin-top:42px}.signup{grid-template-columns:minmax(0,1fr) 470px}}
+@media(min-width:900px) and (max-width:1150px){.home{grid-template-columns:200px minmax(0,1fr) 250px}.app-top{padding-left:25px}.app-nav{padding:28px 12px}.app-nav button{gap:12px;padding-left:14px}.reels{grid-template-columns:1fr}.sample-reel{min-height:360px}.website-aside{padding-right:20px}.website-verse{padding:20px}.website-verse blockquote{font-size:23px}.signup{padding:40px;gap:40px;grid-template-columns:minmax(0,1fr) 420px}.signup-card{padding:30px}.signup-story h1{font-size:65px}}
+@media(min-width:601px) and (max-width:899px){.app-scroll{padding:30px max(30px,calc((100vw - 620px)/2))}.app-top{padding:20px 30px}.signup{padding:32px}.signup-card{max-width:420px;margin:auto}.signup-brand{margin-bottom:22px}.reels{grid-template-columns:repeat(2,minmax(0,1fr))}.sample-reel{min-height:365px}.sample-reel h3{font-size:25px}.app-nav button{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.home{animation:none}}
