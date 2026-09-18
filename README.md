@@ -150,9 +150,3 @@ If that also does not work, install Python 3 and try again.
 Haven is currently a prototype being developed for the **Gloo AI Hackathon**.
 
 The current version prioritizes demonstrating the product experience and core concept. Additional backend functionality, AI integrations, data infrastructure, security measures, and other production features may be developed in later stages.
-
----
-
-## 📜 License & Third-Party Resources
-
-See [`SOURCE_CODE.md`](SOURCE_CODE.md) for information about source code, licenses, and third-party resources used in the project.
